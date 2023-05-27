@@ -1,0 +1,21 @@
+/*
+Workshop 1
+Name: Benny Yang
+Student ID: 112654223
+Email: byang68@myseneca.ca
+Date: May 19th, 2023
+I have done all the coding by myself and only copied the code that
+my professor provided to complete my workshops and assignments.
+*/
+
+For our first workshop and lesson of this course, I found that I got to use functionalities of C++ that I never really touched before and got to review a lot of the concepts we learned in OOP244. 
+In terms on the workshop itself, being asked to explain constexpr, I did some research and found that it is a specifier that allows the variable or function to be evaluated at compile time.
+Allowing for the int MAX_CARS = 100; to be defined right at compile time.
+
+In terms of the difference between internal and external linkages, internal linkages are variables and/or variables that are only accessible within their own translation unit and cannon be accessed by another translation unit. It is done with the declaring variables and functions as static and an example of that would be in my code when I have:
+ 
+ static int counter = 1; // in my display function to keep track of the numbering for the cars.
+
+While an external linkage allows for access across other translation units. Done with 'extern', it allowed the doubles g_taxrate and g_discount to be used across the w1_p2.cpp to carads.cpp.
+
+Lastly, just going over the changes I made from part 1 to part 2. I changed the m_brand in the Cars class from a static array of chars to a pointer of chars so I could dynamically change its size. I added the copy constructor, assignment operator, and destructor to fit the rule of 3 and to ensure that the class is being correctly copied, assigned and deleted. In addition it helps manage the allocation and deallocation of memory in the running of the program. I added a bool operator that returns true if the car was new, and the two asked for global functions. The >> operator calling the read function from the Cars class and overloading the operator again to copy the information over from one car to another car.
