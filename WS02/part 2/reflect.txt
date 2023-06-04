@@ -1,0 +1,15 @@
+/*
+Workshop 2 Part 2
+Name: Benny Yang
+Student ID: 112654223
+Email: byang68@myseneca.ca
+Date: May 27th, 2023
+I have done all the coding by myself and only copied the code that
+my professor provided to complete my workshops and assignments.
+*/
+
+As I understand it, the significant time difference between the copy and move operations are that move is just giving the resource of one object to another by transferring the pointers of one object to the other. This allows it to be faster than copy since copy is the creation of a new object with the allocation of memory and copying of data from one object to another. Move operations is not as intensive of a process when compared to copy operations, especially for larger objects.
+
+For the custom constructor of TennisLog using the file, I read over the file once using a while loop to get the count on the amount of lines there was total. I then created a new TennisMatch object with the size of the gotten count and reset the file back to the beginning for data reading. Using a for loop going through the file up till the end, I use getline to grab each element in the line separated by a comma delimiter. Since match id in the structure is not a string, I had to use stoi to convert it from a string into an integer to save it into the structure. After the loop, I close the file. I would say that a way to avoid rereading the file was if I could get the size of the file and read through it at the same time so that I wouldn't have to go through once to get m_count and then another to populate the array.
+
+The links provided directed us to use steady clock because it is better at measuring intervals since it is not affected for adjustments to the system clock. Which makes sense since functionally, a system clock is more so to tell the user the current time with relation to daylight savings and other adjustments. While steady clock does not get adjusted by anything, it would only measures the time between A and B.
