@@ -1,0 +1,25 @@
+/*
+Workshop 5 Part 2
+Name: Benny Yang
+Student ID: 112654223
+Email: byang68@myseneca.ca
+Date: June 18st, 2023
+I have done all the coding by myself and only copied the code that
+my professor provided to complete my workshops and assignments.
+*/
+
+The difference between a Functor and a lambda expression is that a Functor is a class/struct that overloads the () operator. 
+It allows an object to be called like a function and they are useful for situations where you need to store state within the object.
+They can contain member variables and functions, which allow for more operations. While a lambda expression is an anonymous function that can be defined
+inline, providing a quick way to define and use functions without the need for a seperately named function object. 
+Used for callbacks or as arguments in bigger functions, they allow for short lived functions to be created and used.
+
+In terms of the exception thrown in the SpellChecker constructor, I would have created a boolean flag to track if an error was encountered.
+And then based on the boolean flag, I would then send a custom error message to the client side. Or I would create a validator function that
+would run and have the response be handled based on the result of the validator. This way would also be reusable in multiple parts of the program.
+
+The Movie and Book classes could be combined under a parent class of Media and the overlaping functionality and variables be brought up to the parent class.
+
+The creation of a default constructor is in my opinion, is beneficial just to have in case one needs to instantiate an instance of Movie or Book.
+Without having information places inside yet. Altho our code for this project is more catered for the custom constructor since it reads the file and error handles its opening.
+This functionality could be placed into its own function and reused in other parts of the program.

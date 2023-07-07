@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/snorting_rainbow/Dropbox/Mac/Documents/Seneca/OOP345NAA/CPP3-Workshops/WS03/part 2/Test",
+      "program": "/Users/snorting_rainbow/Dropbox/Mac/Documents/Seneca/OOP345NAA/CPP3-Workshops/WS03/part 2/Test/build/Debug/outDebug"
+    }
+  ]
+}

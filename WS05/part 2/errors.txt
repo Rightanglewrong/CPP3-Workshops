@@ -1,0 +1,10 @@
+In file included from w5_p2.cpp:9:
+Collection.h: In member function ‘T& sdds::Collection<T>::operator[](size_t) const’:
+Collection.h:83:20: error: ‘m_element’ was not declared in this scope
+   83 |             return m_element[idx];
+      |                    ^~~~~~~~~
+w5_p2.cpp: In function ‘int main(int, char**)’:
+w5_p2.cpp:136:25: error: ‘cnt’ was not declared in this scope; did you mean ‘int’?
+  136 |  for (size_t i = 0; i < cnt; ++i)
+      |                         ^~~
+      |                         int

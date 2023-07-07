@@ -1,0 +1,17 @@
+/*
+Workshop 3 Part 2
+Name: Benny Yang
+Student ID: 112654223
+Email: byang68@myseneca.ca
+Date: June 3st, 2023
+I have done all the coding by myself and only copied the code that
+my professor provided to complete my workshops and assignments.
+*/
+
+You do not need to create a .cpp file for Queue because it is a class template, the definition of its members are needed at the point of instantiation. 
+The compiler has access to the complete template code and can generate the necessary code for different types and capacities using the Queue class.
+
+In my Dictionary class, I added an equal operator, which returned true when two terms/definitions were the same and false otherwise and a not equal operator just in case. This is helpful for when the dictionary entries need to be compared for duplicates later on.
+The reason for specializing the push function is to better customize our results to fit our needs. Since floating point values will be hard to match for exact matches.
+It is better to check for values within a tolerance level than to look for exact matches. In defining the class variable outside the class definition, we can save/keep a default value for which we can compare or return to.
+Overall, I would say that the syntax for templates are somewhat confusing to wrap my head around in some situations especially with all the <> and :: chained together.

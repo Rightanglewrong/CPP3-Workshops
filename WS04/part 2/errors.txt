@@ -1,0 +1,22 @@
+ConfirmationSender.cpp: In member function ‘sdds::ConfirmationSender& sdds::ConfirmationSender::operator+=(const sdds::Reservation&)’:
+ConfirmationSender.cpp:84:17: error: ‘m_numRes’ was not declared in this scope
+   84 |             if (m_numRes == m_capacity)
+      |                 ^~~~~~~~
+ConfirmationSender.cpp:84:29: error: ‘m_capacity’ was not declared in this scope
+   84 |             if (m_numRes == m_capacity)
+      |                             ^~~~~~~~~~
+ConfirmationSender.cpp:90:31: error: ‘m_reservationsCS’ was not declared in this scope; did you mean ‘Reservation’?
+   90 |                     temp[i] = m_reservationsCS[i];
+      |                               ^~~~~~~~~~~~~~~~
+      |                               Reservation
+ConfirmationSender.cpp:92:26: error: ‘m_reservationsCS’ was not declared in this scope; did you mean ‘Reservation’?
+   92 |                 delete[] m_reservationsCS;
+      |                          ^~~~~~~~~~~~~~~~
+      |                          Reservation
+ConfirmationSender.cpp:96:13: error: ‘m_reservationsCS’ was not declared in this scope; did you mean ‘Reservation’?
+   96 |             m_reservationsCS[m_numRes] = &res;
+      |             ^~~~~~~~~~~~~~~~
+      |             Reservation
+ConfirmationSender.cpp:96:30: error: ‘m_numRes’ was not declared in this scope
+   96 |             m_reservationsCS[m_numRes] = &res;
+      |                              ^~~~~~~~

@@ -1,0 +1,56 @@
+/*
+Workshop 4 Part 2
+Name: Benny Yang
+Student ID: 112654223
+Email: byang68@myseneca.ca
+Date: June 10st, 2023
+I have done all the coding by myself and only copied the code that
+my professor provided to complete my workshops and assignments.
+*/
+
+Oh boy was this one tricky, composition is a strong form of cohesion where one class is composed of other classes as components of it.
+These components have a lifecycle that is managed by the main class. In my solution, the Restaurant class has a composition relationship with the Reservation class. 
+The Restaurant owns and manages an array of Reservation objects as its private member and is responsible for creating and destroying the Reservation objects and ensuring proper resource allocation and deallocation.
+class Restaurant
+    {
+        Reservation **m_reservations{};
+        size_t m_numRes{};
+        static int CALL_CNT;
+    public:
+    }
+    CREATING HERE
+    {
+          m_numRes = other.m_numRes;
+                m_reservations = new Reservation *[m_numRes];
+                for (size_t i = 0; i < m_numRes; ++i)
+                {
+                    m_reservations[i] = new Reservation;
+                    *(m_reservations[i]) = *(other.m_reservations[i]);
+                }
+    }
+    DELETING HERE
+    {
+        Restaurant::~Restaurant()
+    {
+        for (size_t i = 0; i < m_numRes; i++)
+        {
+            delete m_reservations[i];
+        }
+        delete[] m_reservations;
+    }
+    }
+
+Aggregation on the other hand is a bond of lower cohesion than composition, 
+where one class contains another class as components but each of the class instances/objects can exist without each other.
+In this project, we used aggregation for the ConfirmationSender module, where a class instance of reservations is created and populated
+by pointers to objects of the Reservation class. It is not responsible creating or destroying the reservations itself, 
+only the array which holds the pointer to them.
+
+In terms of move and copy functions in compositions and aggregations. 
+Moving for composition will transfer ownership of resources from source object to the destination object by taking the resource pointers.
+Where as in aggregation, it is transfering the pointers which point to the object in question, as appose to the actual object.
+For copying, in composition, it creates a new copy of the resource while in aggregation, it is also just copying the pointers to the new object, 
+but the new container(class instance) holding the pointers will be dynamically created to hold the pointers.
+
+In both Restaurant and ConfirmationSender, I implement the rule of five but for Restaurant, it is based on composition where as for ConfirmationSender,
+it is based on aggregation.

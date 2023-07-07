@@ -1,0 +1,4 @@
+Book.cpp: In constructor ‘sdds::Book::Book(const string&)’:
+Book.cpp:27:16: warning: unused variable ‘i’ [-Wunused-variable]
+   27 |         size_t i = 0;
+      |                ^
