@@ -1,0 +1,19 @@
+Car.cpp: In constructor ‘sdds::Car::Car(std::istream&)’:
+Car.cpp:64:28: error: ‘numeric_limits’ is not a member of ‘std’
+   64 |             in.ignore(std::numeric_limits<std::streamsize>::max(), ',');
+      |                            ^~~~~~~~~~~~~~
+Car.cpp:64:58: error: expected primary-expression before ‘>’ token
+   64 |             in.ignore(std::numeric_limits<std::streamsize>::max(), ',');
+      |                                                          ^
+Car.cpp:64:61: error: ‘::max’ has not been declared; did you mean ‘std::max’?
+   64 |             in.ignore(std::numeric_limits<std::streamsize>::max(), ',');
+      |                                                             ^~~
+      |                                                             std::max
+In file included from /usr/local/gcc/10.2.0/include/c++/10.2.0/bits/char_traits.h:39,
+                 from /usr/local/gcc/10.2.0/include/c++/10.2.0/ios:40,
+                 from /usr/local/gcc/10.2.0/include/c++/10.2.0/ostream:38,
+                 from /usr/local/gcc/10.2.0/include/c++/10.2.0/iostream:39,
+                 from Car.cpp:11:
+/usr/local/gcc/10.2.0/include/c++/10.2.0/bits/stl_algobase.h:300:5: note: ‘std::max’ declared here
+  300 |     max(const _Tp& __a, const _Tp& __b, _Compare __comp)
+      |     ^~~

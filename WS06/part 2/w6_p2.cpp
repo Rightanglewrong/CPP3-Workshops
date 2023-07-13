@@ -6,8 +6,7 @@
 #include "Utilities.h"
 #include "Utilities.h"
 
-
-void loadData(const char* filename, sdds::Autoshop& as)
+void loadData(const char *filename, sdds::Autoshop &as)
 {
 	std::ifstream file(filename);
 	if (!file)
@@ -24,14 +23,22 @@ void loadData(const char* filename, sdds::Autoshop& as)
 		//           "Unrecognized record type: [TAG]<endl>"
 		//       - one of the fields in the record contains invalid data. In this case print
 		//           "Invalid record!<endl>"
-		sdds::Vehicle* aVehicle = sdds::createInstance(file);
-		if (aVehicle)
-			as += aVehicle;
+		try
+		{
+			sdds::Vehicle *aVehicle = sdds::createInstance(file);
+			if (aVehicle)
+				as += aVehicle;
+		}
+		catch (const std::exception &e)
+		{
+			file.ignore(1000, '\n');
+			std::cerr << e.what() << '\n';
+		}
 	}
 }
 
 // ws dataClean.txt dataMessy.txt
-int main(int argc, char** argv)
+int main(int argc, char **argv)
 {
 	std::cout << "Command Line:\n";
 	std::cout << "--------------------------\n";
@@ -47,11 +54,12 @@ int main(int argc, char** argv)
 	as.display(std::cout);
 
 	std::cout << std::endl;
-	std::list<const sdds::Vehicle*> vehicles;
+	std::list<const sdds::Vehicle *> vehicles;
 	{
 		// TODO: Create a lambda expression that receives as parameter `const sdds::Vehicle*`
 		//         and returns true if the vehicle has a top speed >300km/h
-		auto fastVehicles = ...
+		auto fastVehicles = [](const sdds::Vehicle *vehicle)
+		{ return vehicle->topSpeed() > 300; };
 		as.select(fastVehicles, vehicles);
 		std::cout << "--------------------------------\n";
 		std::cout << "|       Fast Vehicles          |\n";
@@ -69,7 +77,8 @@ int main(int argc, char** argv)
 	{
 		// TODO: Create a lambda expression that receives as parameter `const sdds::Vehicle*`
 		//         and returns true if the vehicle is broken and needs repairs.
-		auto brokenVehicles = ...
+		auto brokenVehicles = [](const sdds::Vehicle *vehicle)
+		{ return vehicle->condition() == "broken"; };
 		as.select(brokenVehicles, vehicles);
 		std::cout << "--------------------------------\n";
 		std::cout << "| Vehicles in need of repair   |\n";

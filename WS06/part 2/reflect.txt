@@ -1,0 +1,15 @@
+/*
+Workshop 6 Part 2
+Name: Benny Yang
+Student ID: 112654223
+Email: byang68@myseneca.ca
+Date: July 9th, 2023
+I have done all the coding by myself and only copied the code that
+my professor provided to complete my workshops and assignments.
+*/
+
+	We needed to deallocated the dynamically allocated memory in our vector since they were a vector of pointers to instances of vehicles. In this case, we need to write the deconstructor for it ourselves since vector will create and delete objects automatically, but not pointers to objects.
+
+	By putting a try catch into our loadData(), we can ensure that the code will catch and display any errors that we found. The way I had it set up was that if there was an error thrown out, then it would display from the loadData() catch{}. I had checks put in inside my Car constructor and in my create instance function inside my Utilities.
+
+	The way we did it could not have been changed since if we had swapped it to std::list<sdds::Vehicle> and std::vector<sdds::Vehicle>, there was a possibility of lost data as a list of objects may be expecting the base class and not the derived class that we wanted the information from. Also, doing it the way we are doing it allows for explicit control of dynamic allocation and deallocation.
