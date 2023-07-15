@@ -1,0 +1,29 @@
+/*
+Workshop 7 Part 2
+Name: Benny Yang
+Student ID: 112654223
+Email: byang68@myseneca.ca
+Date: July 15th, 2023
+I have done all the coding by myself and only copied the code that
+my professor provided to complete my workshops and assignments.
+*/
+
+    I used std::for_each to go over the vector of crimes in the display function because it looked the most familiar, 
+it being the same name as the regular for each functionality. It was used to iterate over the crimes 
+and call the overloaded << operator to print out the infomation about the crimes in the vector.
+I used std::sort to sort the vector of crimes based on the search parameters used in w7_p2.cpp.
+This function was just the most straight forward for what was needed to be accomplished.
+I used std::remove_if to clean the"[None]" from the crime records because I liked that it had a conditional clause built into the function.
+As appose to just using std::remove.
+I used std::any_of to check if any of the crimes matched the function parameter, since it only needs to check 
+if the crime exists and not the location of the crime in the collection, any_of is perfect cause it'll return true once an element matches.
+I used copy_if to get a list of crimes based on the inputted province because it has a built in conditional which allows
+me to check for matching province while iterating over the collection.
+
+    I think that it is better to use STL algorithms instead of manually implementing loops with functionality since it allows
+the programmer to write less code and have more readable code. They are easy to reuse since we are just calling in the functions
+from the algorithms library and would also probably be more efficient than the code we would write ourselves to do the same functionality.
+
+    For the sort function, I would have personally had the options listed out with numbers and had the user enter a number 
+that was then validated to see if it was within range. That way, it would less error prone since the user wouldn't need to
+spell anything and they can see what was needed to be searched and just select with numbers.
