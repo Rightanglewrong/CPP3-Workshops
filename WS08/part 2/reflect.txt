@@ -1,0 +1,36 @@
+/*
+Workshop 8 Part 2
+Name: Benny Yang
+Student ID: 112654223
+Email: byang68@myseneca.ca
+Date: July 21th, 2023
+I have done all the coding by myself and only copied the code that
+my professor provided to complete my workshops and assignments.
+*/
+
+The advantage of the smart pointer is the management of the memory resource being taken out of the programmer's hand and auto handled. Comparing the raw pointer writeRaw and smart pointer writeSmart, I delete empWage manually in the code when I am finished with its use and when an error is caught.
+auto *empWage = new EmployeeWage(emp[i].name, sal[j].salary);
+					try
+					{
+						empWage->rangeValidator();
+					}
+					catch (const std::string err)
+					{
+						delete empWage;
+						throw err;
+					}
+					activeEmp += empWage;
+					delete empWage;
+Versus when writeSmart, I did not have to.
+					const auto empWage = std::make_unique<EmployeeWage>(emp[i].name, sal[j].salary);
+					try
+					{
+						empWage->rangeValidator();
+					}
+					catch (const std::string &err)
+					{
+						throw err;
+					}
+					activeEmp += empWage;
+
+The code is shorter and safer since the memory management is included in the use of the smart pointer. Less code manually written by me I believe is safer code.

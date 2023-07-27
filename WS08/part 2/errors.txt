@@ -1,0 +1,10 @@
+In file included from w8_p2_prof.cpp:4:
+GeneratingList.h: In member function ‘void sdds::GeneratingList<T>::operator+=(const std::unique_ptr<_Tp>&)’:
+GeneratingList.h:81:21: error: ‘t’ was not declared in this scope
+   81 |     list.push_back(*t);
+      |                     ^
+In file included from WritingRecord.cpp:10:
+GeneratingList.h: In member function ‘void sdds::GeneratingList<T>::operator+=(const std::unique_ptr<_Tp>&)’:
+GeneratingList.h:81:21: error: ‘t’ was not declared in this scope
+   81 |     list.push_back(*t);
+      |                     ^

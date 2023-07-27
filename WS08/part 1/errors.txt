@@ -1,0 +1,30 @@
+In file included from w8_p1_prof.cpp:4:
+GeneratingList.h: In member function ‘void sdds::GeneratingList<T>::operator+=(const T*)’:
+GeneratingList.h:65:8: error: ‘t’ was not declared in this scope
+   65 |    if (t != nullptr)
+      |        ^
+In file included from WritingRecord.cpp:2:
+GeneratingList.h: In member function ‘void sdds::GeneratingList<T>::operator+=(const T*)’:
+GeneratingList.h:65:8: error: ‘t’ was not declared in this scope
+   65 |    if (t != nullptr)
+      |        ^
+GeneratingList.h: In instantiation of ‘void sdds::GeneratingList<T>::operator+=(const T*) [with T = sdds::EmployeeWage]’:
+WritingRecord.cpp:63:29:   required from here
+GeneratingList.h:67:19: error: no matching function for call to ‘std::vector<sdds::EmployeeWage, std::allocator<sdds::EmployeeWage> >::push_back(const sdds::EmployeeWage*&)’
+   67 |     list.push_back(obj);
+      |     ~~~~~~~~~~~~~~^~~~~
+In file included from /usr/local/gcc/10.2.0/include/c++/10.2.0/vector:67,
+                 from GeneratingList.h:6,
+                 from WritingRecord.cpp:2:
+/usr/local/gcc/10.2.0/include/c++/10.2.0/bits/stl_vector.h:1187:7: note: candidate: ‘void std::vector<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = sdds::EmployeeWage; _Alloc = std::allocator<sdds::EmployeeWage>; std::vector<_Tp, _Alloc>::value_type = sdds::EmployeeWage]’
+ 1187 |       push_back(const value_type& __x)
+      |       ^~~~~~~~~
+/usr/local/gcc/10.2.0/include/c++/10.2.0/bits/stl_vector.h:1187:35: note:   no known conversion for argument 1 from ‘const sdds::EmployeeWage*’ to ‘const value_type&’ {aka ‘const sdds::EmployeeWage&’}
+ 1187 |       push_back(const value_type& __x)
+      |                 ~~~~~~~~~~~~~~~~~~^~~
+/usr/local/gcc/10.2.0/include/c++/10.2.0/bits/stl_vector.h:1203:7: note: candidate: ‘void std::vector<_Tp, _Alloc>::push_back(std::vector<_Tp, _Alloc>::value_type&&) [with _Tp = sdds::EmployeeWage; _Alloc = std::allocator<sdds::EmployeeWage>; std::vector<_Tp, _Alloc>::value_type = sdds::EmployeeWage]’
+ 1203 |       push_back(value_type&& __x)
+      |       ^~~~~~~~~
+/usr/local/gcc/10.2.0/include/c++/10.2.0/bits/stl_vector.h:1203:30: note:   no known conversion for argument 1 from ‘const sdds::EmployeeWage*’ to ‘std::vector<sdds::EmployeeWage, std::allocator<sdds::EmployeeWage> >::value_type&&’ {aka ‘sdds::EmployeeWage&&’}
+ 1203 |       push_back(value_type&& __x)
+      |                 ~~~~~~~~~~~~~^~~
